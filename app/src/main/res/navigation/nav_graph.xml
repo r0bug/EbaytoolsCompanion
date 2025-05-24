@@ -15,17 +15,22 @@
 
     <fragment
         android:id="@+id/navigation_items"
-        android:name="com.ebaytools.companion.ui.items.ItemListFragment"
-        android:label="Items" />
+        android:name="com.ebaytools.companion.ui.queue.QueueListFragment"
+        android:label="Queues" />
 
     <fragment
         android:id="@+id/navigation_camera"
-        android:name="com.ebaytools.companion.ui.camera.CameraFragment"
-        android:label="Camera" />
+        android:name="com.ebaytools.companion.ui.capture.ItemCaptureFragment"
+        android:label="Capture" >
+        <argument
+            android:name="queueId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_export"
-        android:name="com.ebaytools.companion.ui.export.ExportFragment"
+        android:name="com.ebaytools.companion.ui.queue.QueueListFragment"
         android:label="Export" />
 
     <fragment
