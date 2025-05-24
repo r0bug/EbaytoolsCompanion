@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.ebaytools.companion.ui.home.HomeFragment"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_home_to_queue_selection"
+            app:destination="@id/queueSelectionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_items"
+        android:name="com.ebaytools.companion.ui.items.ItemListFragment"
+        android:label="Items" />
+
+    <fragment
+        android:id="@+id/navigation_camera"
+        android:name="com.ebaytools.companion.ui.camera.CameraFragment"
+        android:label="Camera" />
+
+    <fragment
+        android:id="@+id/navigation_export"
+        android:name="com.ebaytools.companion.ui.export.ExportFragment"
+        android:label="Export" />
+
+    <fragment
+        android:id="@+id/queueSelectionFragment"
+        android:name="com.ebaytools.companion.ui.queue.QueueSelectionFragment"
+        android:label="Queue Selection" >
+        <action
+            android:id="@+id/action_queue_selection_to_queue_list"
+            app:destination="@id/queueListFragment" />
+        <action
+            android:id="@+id/action_queue_selection_to_item_capture"
+            app:destination="@id/itemCaptureFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/queueListFragment"
+        android:name="com.ebaytools.companion.ui.queue.QueueListFragment"
+        android:label="Select Queue" >
+        <action
+            android:id="@+id/action_queue_list_to_item_capture"
+            app:destination="@id/itemCaptureFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/itemCaptureFragment"
+        android:name="com.ebaytools.companion.ui.capture.ItemCaptureFragment"
+        android:label="Capture Items" >
+        <argument
+            android:name="queueId"
+            app:argType="long" />
+    </fragment>
+
+</navigation>
